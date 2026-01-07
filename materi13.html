@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 13 – Penggunaan Web APIs</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Pertemuan 13 – Penggunaan Web APIs</h1>
+        <nav class="breadcrumb">
+            <a href="index.html">Beranda</a> > Pertemuan 13
+        </nav>
+    </header>
+    <a href="index.html" class="btn-back">← Kembali ke Beranda</a>
+
+    <main class="container">
+        <div class="card">
+            <div class="card-preview">
+                <h3>Tujuan Pembelajaran</h3>
+                <p>Mahasiswa diharapkan mampu menggunakan Web APIs browser seperti Geolocation, Local Storage, dan Notification untuk menambahkan fitur interaktif dan personalisasi pada aplikasi web.</p>
+
+                <h3>Pengenalan Web APIs</h3>
+                <p>Web APIs adalah interface yang memungkinkan JS akses fitur browser/device, seperti lokasi, storage, notifikasi. APIs ini buat web lebih powerful tanpa plugin. Contoh: Geolocation dapat lokasi user, Local Storage simpan data lokal, Notification kirim alert.</p>
+                <p>Penting: APIs butuh permission user, dan hanya work di HTTPS untuk security.</p>
+
+                <h3>Contoh Web APIs Utama</h3>
+                <ul>
+                    <li><b>Geolocation</b>: Dapat koordinat GPS. navigator.geolocation.getCurrentPosition(success, error).</li>
+                    <li><b>Local Storage</b>: Simpan data string di browser. localStorage.setItem('key', 'value').</li>
+                    <li><b>Notification</b>: Kirim notif. Notification.requestPermission().then(() => new Notification('Hi!')).</li>
+                </ul>
+                <p>APIs lain: Canvas (gambar), Web Audio (suara), Battery (status baterai).</p>
+
+                <h3>Contoh Kode Lengkap</h3>
+                <pre>
+// Geolocation
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+        position => {
+            console.log('Latitude:', position.coords.latitude);
+            console.log('Longitude:', position.coords.longitude);
+            // Tampilkan di map atau simpan
+        },
+        error => {
+            console.error('Error:', error.message);
+        }
+    );
+} else {
+    console.log('Geolocation not supported');
+}
+
+// Local Storage
+localStorage.setItem('username', 'John');
+let user = localStorage.getItem('username');
+console.log('User:', user);
+
+// Notification
+if ('Notification' in window) {
+    Notification.requestPermission().then(permission => {
+        if (permission === 'granted') {
+            new Notification('Selamat datang di website!');
+        }
+    });
+}
+                </pre>
+                <p>Penjelasan: Geolocation dapat lokasi (butuh permission). Local Storage simpan data tanpa expire. Notification kirim alert (butuh allow).</p>
+
+                <h3>Tips Praktis</h3>
+                <ul>
+                    <li>Test APIs di browser console, handle error jika user deny permission.</li>
+                    <li>Local Storage untuk data sederhana, gunakan IndexedDB untuk kompleks.</li>
+                    <li>Untuk Geolocation, tampilkan loading saat fetch koordinat.</li>
+                    <li>APIs modern seperti Web Bluetooth atau Web USB butuh experimental flag.</li>
+                </ul>
+
+                <h3>Ringkasan Materi</h3>
+                <p>Web APIs tambah interaktivitas web tanpa backend. Ini buat app personal seperti weather lokal atau reminder.</p>
+
+                <h3>Latihan dan Diskusi</h3>
+                <p>1. Buat halaman dengan button "Get Location", tampilkan lat/long di div. 2. Simpan nama user di Local Storage, load saat refresh. 3. Implementasi notif sederhana saat button klik. 4. Diskusikan: Apa risiko security APIs? Jika stuck, cek MDN docs.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 – UAS Pemrograman Web | Dibuat oleh Mahasiswa IT Semester 5</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

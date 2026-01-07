@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 11 – Git untuk Kolaborasi</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Pertemuan 11 – Git untuk Kolaborasi</h1>
+        <nav class="breadcrumb">
+            <a href="index.html">Beranda</a> > Pertemuan 11
+        </nav>
+    </header>
+    <a href="index.html" class="btn-back">← Kembali ke Beranda</a>
+
+    <main class="container">
+        <div class="card">
+            <div class="card-preview">
+                <h3>Tujuan Pembelajaran</h3>
+                <p>Mahasiswa diharapkan mampu menggunakan Git untuk pengelolaan versi proyek web, termasuk commit perubahan, branching untuk fitur baru, dan merging untuk integrasi kode dalam tim kolaborasi.</p>
+
+                <h3>Pengelolaan Versi dengan Git</h3>
+                <p>Git adalah sistem kontrol versi distributed yang track perubahan kode, memungkinkan rollback, dan kolaborasi tim. Bayangkan Git seperti mesin waktu untuk kode: simpan snapshot setiap perubahan. Git berbeda dari GitHub (platform hosting), Git adalah tool lokal.</p>
+                <p>Keuntungan: Track history, hindari konflik, backup otomatis. Setup: Install Git, init repo dengan git init.</p>
+
+                <h3>Commit, Branching, Merging</h3>
+                <ul>
+                    <li><b>Commit</b>: Simpan perubahan dengan pesan deskriptif. Langkah: git add . (stage), git commit -m "Pesan". Commit seperti save point di game.</li>
+                    <li><b>Branching</b>: Buat cabang untuk fitur baru tanpa ganggu main branch. Contoh: git branch feature-login, git checkout feature-login. Branch seperti jalur paralel.</li>
+                    <li><b>Merging</b>: Gabung branch ke main. git merge feature-login. Jika konflik, resolve manual.</li>
+                </ul>
+                <p>Workflow: Develop di branch, test, merge ke main.</p>
+
+                <h3>Contoh Kode Command Line</h3>
+                <pre>
+# Setup repo
+git init
+git config --global user.name "Nama Anda"
+git config --global user.email "email@domain.com"
+
+# Commit perubahan
+git add index.html
+git commit -m "Tambah navbar responsif"
+
+# Branching
+git branch feature-css
+git checkout feature-css
+# Edit file, lalu commit
+git add .
+git commit -m "Update styling CSS"
+
+# Merging
+git checkout main
+git merge feature-css
+# Resolve konflik jika ada, lalu commit
+                </pre>
+                <p>Penjelasan: Command init repo, commit simpan perubahan, branch buat fitur, merge gabung. Jalankan di terminal atau Git Bash.</p>
+
+                <h3>Tips Praktis</h3>
+                <ul>
+                    <li>Gunakan GitHub untuk push repo online: git remote add origin url, git push origin main.</li>
+                    <li>Commit sering dengan pesan jelas, hindari "fix bug" – pakai "Fix login validation error".</li>
+                    <li>Untuk konflik merge, gunakan git status untuk lihat file bermasalah, edit manual.</li>
+                    <li>Belajar Git di https://learngitbranching.js.org/ untuk visual simulasi.</li>
+                </ul>
+
+                <h3>Ringkasan Materi</h3>
+                <p>Git essential untuk developer modern. Commit track perubahan, branching aman eksplorasi, merging integrasi tim. Ini buat proyek web scalable.</p>
+
+                <h3>Latihan dan Diskusi</h3>
+                <p>1. Init repo Git di folder proyek, commit file HTML/CSS/JS. 2. Buat branch "add-js", tambah fungsi JS, commit, merge ke main. 3. Push ke GitHub repo baru. 4. Diskusikan: Apa beda Git vs SVN? Jika error, cek git status dan log.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 – UAS Pemrograman Web | Dibuat oleh Mahasiswa IT Semester 5</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

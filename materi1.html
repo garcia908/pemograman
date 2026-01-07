@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 1 – Pengenalan HTML dan Dasar Struktur Dokumen Halaman Web</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Pertemuan 1 – Pengenalan HTML dan Dasar Struktur Dokumen Halaman Web</h1>
+        <nav class="breadcrumb">
+            <a href="index.html">Beranda</a> > Pertemuan 1
+        </nav>
+    </header>
+    <a href="index.html" class="btn-back">← Kembali ke Beranda</a>
+
+    <main class="container">
+        <div class="card">
+            <div class="card-preview">
+                <h3>Tujuan Pembelajaran</h3>
+                <p>Setelah menyelesaikan pertemuan ini, mahasiswa diharapkan dapat memahami konsep dasar HTML sebagai fondasi web development, membuat struktur dokumen HTML yang valid, dan mengidentifikasi elemen-elemen dasar untuk membangun halaman web sederhana yang dapat diakses oleh browser.</p>
+
+                <h3>Pengenalan HTML: Apa Itu dan Mengapa Penting?</h3>
+                <p>Bayangkan HTML seperti kerangka rumah. Tanpa kerangka, rumah tidak bisa berdiri. HTML (HyperText Markup Language) adalah bahasa markup yang digunakan untuk membuat struktur halaman web. Ia bukan bahasa pemrograman seperti JavaScript, melainkan bahasa yang menggunakan "tag" untuk memberi tahu browser bagaimana menampilkan konten. HTML dikembangkan oleh Tim Berners-Lee pada tahun 1991 sebagai bagian dari World Wide Web, dan hingga kini menjadi standar untuk semua situs web. Tanpa HTML, tidak ada web seperti yang kita kenal hari ini – dari blog sederhana hingga aplikasi kompleks.</p>
+                <p>HTML penting karena ia memungkinkan kita mengorganisir informasi secara hierarkis, membuat konten mudah dibaca manusia dan mesin pencari. Misalnya, heading untuk judul, paragraf untuk teks, dan link untuk navigasi.</p>
+
+                <h3>Struktur Dasar Dokumen Halaman Web</h3>
+                <p>Struktur HTML seperti resep masakan: ada bahan utama yang harus ada agar masakan berhasil. Setiap dokumen HTML dimulai dengan deklarasi DOCTYPE, yang memberi tahu browser versi HTML yang digunakan. Kemudian, ada elemen root &lt;html&gt; yang membungkus seluruh halaman. Di dalamnya, &lt;head&gt; berisi informasi "di balik layar" seperti judul halaman dan link ke file eksternal, sementara &lt;body&gt; adalah tempat konten utama yang dilihat pengguna.</p>
+                <ul>
+                    <li><b>&lt;!DOCTYPE html&gt;</b>: Ini seperti pengantar resmi. Wajib ada agar browser merender halaman dalam mode standar, bukan mode lama (quirks mode) yang bisa bikin tampilan aneh.</li>
+                    <li><b>&lt;html&gt;</b>: Elemen induk utama. Tambahkan atribut lang="id" untuk mendukung bahasa Indonesia dan aksesibilitas.</li>
+                    <li><b>&lt;head&gt;</b>: Tempat metadata. Misalnya, &lt;title&gt; untuk judul tab browser, &lt;meta charset="UTF-8"&gt; untuk karakter khusus seperti é atau ñ, dan &lt;link&gt; untuk menghubungkan CSS.</li>
+                    <li><b>&lt;body&gt;</b>: Inti konten. Semua yang Anda lihat di halaman web – teks, gambar, tombol – ada di sini.</li>
+                </ul>
+                <p>Langkah-langkah membuat struktur dasar: 1) Buka editor teks, 2) Tulis DOCTYPE, 3) Tambah &lt;html&gt;, 4) Buat &lt;head&gt; dengan title, 5) Buat &lt;body&gt; dengan konten sederhana, 6) Simpan sebagai .html dan buka di browser.</p>
+
+                <h3>Elemen Dasar HTML dan Cara Menggunakannya</h3>
+                <p>Elemen HTML adalah "blok bangunan". Setiap elemen dimulai dengan tag pembuka (&lt;tag&gt;

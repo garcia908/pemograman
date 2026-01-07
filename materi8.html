@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 8 – API dan Validasi Form dengan JavaScript</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Pertemuan 8 – API dan Validasi Form dengan JavaScript</h1>
+        <nav class="breadcrumb">
+            <a href="index.html">Beranda</a> > Pertemuan 8
+        </nav>
+    </header>
+    <a href="index.html" class="btn-back">← Kembali ke Beranda</a>
+
+    <main class="container">
+        <div class="card">
+            <div class="card-preview">
+                <h3>Tujuan Pembelajaran</h3>
+                <p>Mahasiswa diharapkan mampu menggunakan Fetch API untuk mengambil data dari server eksternal, memahami format JSON, dan mengimplementasikan validasi form client-side untuk meningkatkan keamanan dan user experience aplikasi web.</p>
+
+                <h3>Fetch API dan JSON</h3>
+                <p>Fetch API adalah cara modern JS untuk request data dari server tanpa reload halaman. Ia menggantikan XMLHttpRequest lama. JSON (JavaScript Object Notation) adalah format data ringan, mudah dibaca manusia dan mesin, seperti objek JS tapi string. Contoh: {"nama": "John", "umur": 25}. Fetch ambil JSON dari API, parse, dan tampilkan di web.</p>
+                <p>Penggunaan: fetch('url').then(res => res.json()).then(data => console.log(data)). Fetch async, jadi tidak blok UI. Error handle dengan .catch().</p>
+
+                <h3>Validasi Form dengan JavaScript</h3>
+                <p>Validasi form cek input user sebelum kirim ke server, cegah data salah seperti email tanpa @ atau password lemah. Lakukan di client-side untuk feedback cepat, tapi selalu validasi server-side juga untuk keamanan. Gunakan event listener di form submit, cek kondisi, alert atau highlight error.</p>
+                <p>Analoginya: Validasi seperti penjaga pintu, pastikan tamu sesuai aturan sebelum masuk.</p>
+
+                <h3>Contoh Kode Lengkap</h3>
+                <pre>
+// Fetch API ambil data JSON dari API publik
+fetch('https://jsonplaceholder.typicode.com/users')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network error');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Tampilkan data di halaman
+        let output = '';
+        data.forEach(user => {
+            output += '&lt;p&gt;' + user.name + ' - ' + user.email + '&lt;/p&gt;';
+        });
+        document.getElementById('users').innerHTML = output;
+    })
+    .catch(error => console.error('Error:', error));
+
+// Validasi form
+function validateForm(event) {
+    event.preventDefault(); // Cegah submit default
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
+    
+    if (!email.includes('@')) {
+        alert('Email harus valid!');
+        return false;
+    }
+    if (password.length < 6) {
+        alert('Password minimal 6 karakter!');
+        return false;
+    }
+    alert('Form valid, data dikirim!');
+    // Kirim data ke server (simulasi)
+}
+
+// Panggil di HTML: &lt;form onsubmit="validateForm(event)"&gt;
+                </pre>
+                <p>Penjelasan: Fetch ambil data user dari API dummy, tampilkan di div. Validasi cek email dan password, alert jika salah. Jalankan di browser dengan form HTML.</p>
+
+                <h3>Tips Praktis</h3>
+                <ul>
+                    <li>Gunakan async/await untuk Fetch lebih readable: async function getData() { let res = await fetch('url'); let data = await res.json(); }.</li>
+                    <li>Untuk validasi, tambah regex untuk email kompleks: /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email).</li>
+                    <li>Test API di tools seperti Postman dulu, lalu integrasi ke JS.</li>
+                    <li>Jika API gagal, handle dengan loading spinner atau pesan error user-friendly.</li>
+                </ul>
+
+                <h3>Ringkasan Materi</h3>
+                <p>Fetch API dan JSON buat web ambil data dinamis dari luar, validasi form jaga input benar dan aman. Ini buat aplikasi seperti chat atau e-commerce lebih interaktif.</p>
+
+                <h3>Latihan dan Diskusi</h3>
+                <p>1. Buat halaman dengan form nama dan email, validasi JS sebelum alert "Berhasil". 2. Fetch data dari API publik (misal: https://jsonplaceholder.typicode.com/posts), tampilkan judul post di list. 3. Tambah error handling jika fetch gagal. 4. Diskusikan: Mengapa validasi client-side saja tidak cukup? Jika stuck, test di console browser.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 – UAS Pemrograman Web | Dibuat oleh Mahasiswa IT Semester 5</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

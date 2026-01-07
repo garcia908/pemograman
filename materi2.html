@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 2 – Struktur Halaman Web dan Input Data dengan HTML</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Pertemuan 2 – Struktur Halaman Web dan Input Data dengan HTML</h1>
+        <nav class="breadcrumb">
+            <a href="index.html">Beranda</a> > Pertemuan 2
+        </nav>
+    </header>
+    <a href="index.html" class="btn-back">← Kembali ke Beranda</a>
+
+    <main class="container">
+        <div class="card">
+            <div class="card-preview">
+                <h3>Tujuan Pembelajaran</h3>
+                <p>Mahasiswa mampu merancang dan mengimplementasikan struktur halaman web lengkap menggunakan elemen HTML seperti heading, paragraf, list, link, dan image, serta mengintegrasikan tabel dan form untuk pengumpulan data input dari pengguna secara efektif dan user-friendly.</p>
+
+                <h3>Pembuatan Struktur Halaman Web Menggunakan HTML</h3>
+                <p>Struktur halaman web seperti blueprint bangunan: ia menentukan bagaimana konten diorganisir agar mudah dipahami. HTML menyediakan elemen semantik yang tidak hanya membuat halaman terlihat rapi, tapi juga membantu mesin pencari dan screen reader memahami hierarki informasi. Misalnya, heading untuk judul, paragraf untuk teks utama, list untuk daftar, link untuk navigasi, dan image untuk visualisasi.</p>
+                <ul>
+                    <li><b>Heading (h1-h6)</b>: Gunakan h1 sekali per halaman untuk judul utama, h2 untuk sub-bab, dll. Ini penting untuk SEO karena mesin pencari membaca hierarki ini.</li>
+                    <li><b>Paragraf dan List</b>: &lt;p&gt; untuk teks panjang, &lt;ul&gt; untuk daftar bullet, &lt;ol&gt; untuk daftar bernomor. List membantu menyusun informasi kompleks.</li>
+                    <li><b>Link dan Image</b>: &lt;a href="url"&gt; untuk link ke halaman lain, &lt;img src="path" alt="deskripsi"&gt; untuk gambar. Alt text wajib untuk aksesibilitas.</li>
+                </ul>
+                <p>Langkah-langkah praktis: 1) Tentukan hierarki konten, 2) Gunakan heading untuk struktur, 3) Tambah paragraf dan list untuk detail, 4) Sisipkan link dan gambar untuk interaktivitas.</p>
+
+                <h3>Penggunaan Tabel dan Form HTML untuk Input Data</h3>
+                <p>Tabel seperti spreadsheet di web: digunakan untuk menampilkan data tabular seperti jadwal kuliah atau daftar produk. Form adalah jembatan antara user dan web, memungkinkan input data seperti nama, email, atau pilihan. Elemen form termasuk input text, checkbox untuk multiple choice, radio button untuk single choice, dan dropdown (select) untuk opsi terbatas.</p>
+                <ul>
+                    <li><b>Tabel</b>: &lt;table&gt; dengan &lt;tr&gt; (row), &lt;th&gt; (header), &lt;td&gt; (data). Tambah border untuk visibility.</li>
+                    <li><b>Form</b>: &lt;form action="url" method="post"&gt; dengan input types. Method GET untuk data sederhana, POST untuk aman.</li>
+                </ul>
+                <p>Analoginya: Tabel seperti katalog, form seperti formulir pendaftaran. Pastikan form validasi dasar di browser untuk UX baik.</p>
+
+                <h3>Contoh Kode Struktur Halaman Lengkap</h3>
+                <pre>
+&lt;body&gt;
+    &lt;header&gt;
+        &lt;h1&gt;Website Kuliah&lt;/h1&gt;
+        &lt;nav&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/nav&gt;
+    &lt;/header&gt;
+    &lt;main&gt;
+        &lt;h2&gt;Pengantar&lt;/h2&gt;
+        &lt;p&gt;Ini pengantar materi.&lt;/p&gt;
+        &lt;ul&gt;
+            &lt;li&gt;Poin 1&lt;/li&gt;
+            &lt;li&gt;Poin 2&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;a href="materi1.html"&gt;Baca Lebih Lanjut&lt;/a&gt;
+        &lt;img src="diagram.jpg" alt="Diagram struktur web"&gt;
+    &lt;/main&gt;
+    &lt;footer&gt;&copy; 2026&lt;/footer&gt;
+&lt;/body&gt;
+                </pre>
+
+                <h3>Contoh Kode Tabel dan Form</h3>
+                <pre>
+&lt;table border="1"&gt;
+    &lt;tr&gt;&lt;th&gt;Mata Kuliah&lt;/th&gt;&lt;th&gt;SKS&lt;/th&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Pemrograman Web&lt;/td&gt;&lt;td&gt;3&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;Basis Data&lt;/td&gt;&lt;td&gt;2&lt;/td&gt;&lt;/tr&gt;
+&lt;/table&gt;
+
+&lt;form action="submit.html" method="post"&gt;
+    &lt;label for="nama"&gt;Nama: &lt;/label&gt;
+    &lt;input type="text" id="nama" name="nama" required&gt;
+    &lt;br&gt;
+    &lt;input type="checkbox" id="agree" name="agree"&gt; Setuju
+    &lt;input type="radio" id="gender" name="gender" value="male"&gt; Laki
+    &lt;select&gt;&lt;option&gt;Pilih Kota&lt;/option&gt;&lt;/select&gt;
+    &lt;button type="submit"&gt;Kirim&lt;/button&gt;
+&lt;/form&gt;
+                </pre>
+
+                <h3>Tips Praktis</h3>
+                <ul>
+                    <li>Gunakan semantic HTML (header, nav, main) untuk aksesibilitas.</li>
+                    <li>Tambahkan alt di img untuk screen reader.</li>
+                    <li>Test form di browser untuk validasi dasar.</li>
+                </ul>
+
+                <h3>Ringkasan</h3>
+                <p>HTML memungkinkan struktur halaman yang terorganisir dan input data yang user-friendly. Kombinasikan dengan CSS untuk tampilan menarik.</p>
+
+                <h3>Latihan</h3>
+                <p>Buat halaman dengan tabel data mahasiswa dan form pendaftaran. Tambahkan link dan gambar. Validasi di browser.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 – UAS Pemrograman Web | Dibuat oleh Mahasiswa IT Semester 5</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

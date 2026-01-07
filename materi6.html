@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 6 – JavaScript Dasar dan Manipulasi DOM</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Pertemuan 6 – JavaScript Dasar dan Manipulasi DOM</h1>
+        <nav class="breadcrumb">
+            <a href="index.html">Beranda</a> > Pertemuan 6
+        </nav>
+    </header>
+    <a href="index.html" class="btn-back">← Kembali ke Beranda</a>
+
+    <main class="container">
+        <div class="card">
+            <div class="card-preview">
+                <h3>Tujuan Pembelajaran</h3>
+                <p>Mahasiswa memahami konsep JS dasar (variabel, tipe data, fungsi), serta manipulasi DOM dan event handling untuk interaktivitas web.</p>
+
+                <h3>Pengenalan JavaScript</h3>
+                <p>JS adalah bahasa pemrograman untuk web interaktif. Dijalankan di browser, membuat halaman dinamis. Tanpa JS, web statis seperti buku.</p>
+
+                <h3>Konsep Dasar</h3>
+                <ul>
+                    <li><b>Variabel</b>: Penyimpan data, let/const nama = "John".</li>
+                    <li><b>Tipe Data</b>: String ("teks"), Number (123), Boolean (true), Array [1,2,3], Object {key: value}.</li>
+                    <li><b>Operator</b>: + (tambah), == (sama), && (dan).</li>
+                    <li><b>Fungsi</b>: Blok kode, function sapa() { alert("Hi"); }.</li>
+                </ul>
+
+                <h3>Manipulasi DOM dan Event Handling</h3>
+                <p>DOM adalah representasi HTML. Manipulasi: getElementById, innerHTML. Event: addEventListener('click', fungsi).</p>
+
+                <h3>Contoh Kode</h3>
+                <pre>
+let nama = "John";
+function ubahTeks() {
+    document.getElementById("teks").innerHTML = "Halo " + nama;
+}
+
+document.getElementById("btn").addEventListener("click", ubahTeks);
+                </pre>
+
+                <h3>Tips Praktis</h3>
+                <ul>
+                    <li>Gunakan console.log untuk debug.</li>
+                    <li>JS case-sensitive, hati-hati typo.</li>
+                    <li>Praktik di JSFiddle untuk test cepat.</li>
+                </ul>
+
+                <h3>Ringkasan</h3>
+                <p>JS buat web hidup. DOM manipulasi ubah konten, event tanggapi user.</p>
+
+                <h3>Latihan</h3>
+                <p>1. Buat variabel dan fungsi JS. 2. Manipulasi DOM ub

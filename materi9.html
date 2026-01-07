@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 9 – Implementasi AJAX</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Pertemuan 9 – Implementasi AJAX</h1>
+        <nav class="breadcrumb">
+            <a href="index.html">Beranda</a> > Pertemuan 9
+        </nav>
+    </header>
+    <a href="index.html" class="btn-back">← Kembali ke Beranda</a>
+
+    <main class="container">
+        <div class="card">
+            <div class="card-preview">
+                <h3>Tujuan Pembelajaran</h3>
+                <p>Mahasiswa diharapkan mampu mengimplementasikan AJAX untuk membuat aplikasi web yang dinamis, di mana bagian halaman dapat diperbarui tanpa reload penuh, menggunakan XMLHttpRequest atau Fetch API.</p>
+
+                <h3>Pengenalan AJAX</h3>
+                <p>AJAX (Asynchronous JavaScript and XML) adalah teknik untuk update bagian halaman web tanpa reload seluruhnya. Ini buat web terasa seperti app desktop. Meski nama "XML", sekarang sering pakai JSON. AJAX gunakan XMLHttpRequest (lama) atau Fetch (modern) untuk request async ke server.</p>
+                <p>Keuntungan: Lebih cepat, UX baik, hemat bandwidth. Contoh: Like di Facebook tanpa refresh halaman.</p>
+
+                <h3>Implementasi AJAX</h3>
+                <p>Langkah: 1. Buat XMLHttpRequest object. 2. Open request (GET/POST, URL). 3. Set callback onload. 4. Send request. Untuk Fetch: fetch(url).then(res => res.json()).then(data => update DOM).</p>
+                <p>Handle response: Cek status (200 = OK), parse data, update elemen HTML dengan innerHTML.</p>
+
+                <h3>Contoh Kode Lengkap</h3>
+                <pre>
+// AJAX dengan XMLHttpRequest
+function loadData() {
+    let xhr = new XMLHttpRequest();
+    xhr.open('GET', 'data.json', true); // true = async
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            let data = JSON.parse(xhr.responseText);
+            document.getElementById('content').innerHTML = '&lt;h2&gt;' + data.title + '&lt;/h2&gt;&lt;p&gt;' + data.message + '&lt;/p&gt;';
+        } else {
+            document.getElementById('content').innerHTML = 'Error loading data';
+        }
+    };
+    xhr.onerror = function() {
+        document.getElementById('content').innerHTML = 'Network error';
+    };
+    xhr.send();
+}
+
+// Panggil dengan button: &lt;button onclick="loadData()"&gt;Load Data&lt;/button&gt;
+
+// AJAX dengan Fetch (lebih modern)
+function loadDataFetch() {
+    fetch('data.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('HTTP error ' + response.status);
+            }
+            return response.json();
+        })
+        .then(data => {
+            document.getElementById('content').innerHTML = '&lt;h2&gt;' + data.title + '&lt;/h2&gt;&lt;p&gt;' + data.message + '&lt;/p&gt;';
+        })
+        .catch(error => {
+            document.getElementById('content').innerHTML = 'Error: ' + error.message;
+        });
+}
+                </pre>
+                <p>Penjelasan: Kode load data dari file JSON lokal, update div tanpa reload. XMLHttpRequest tradisional, Fetch lebih clean. Buat file data.json: {"title": "Judul", "message": "Pesan"}.</p>
+
+                <h3>Tips Praktis</h3>
+                <ul>
+                    <li>Gunakan Fetch untuk kode baru, XMLHttpRequest untuk legacy support.</li>
+                    <li>Tambah loading indicator: Tampilkan "Loading..." sebelum response.</li>
+                    <li>Test di local server (misal: Live Server VS Code) karena CORS issue di file lokal.</li>
+                    <li>Untuk POST, tambah body: fetch(url, {method: 'POST', body: JSON.stringify(data)}).</li>
+                </ul>
+
+                <h3>Ringkasan Materi</h3>
+                <p>AJAX buat web dinamis dengan update partial. Ini fondasi app modern seperti Gmail atau Twitter feed.</p>
+
+                <h3>Latihan dan Diskusi</h3>
+                <p>1. Buat halaman dengan button "Load Quote", AJAX ambil quote dari API (misal: https://api.quotable.io/random), tampilkan di div. 2. Handle error jika network down. 3. Bandingkan XMLHttpRequest vs Fetch. 4. Diskusikan: Kapan pakai AJAX? Jika error, cek console browser.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 – UAS Pemrograman Web | Dibuat oleh Mahasiswa IT Semester 5</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

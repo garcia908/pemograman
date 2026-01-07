@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 3 – Pengenalan dan Penerapan Dasar-dasar CSS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Pertemuan 3 – Pengenalan dan Penerapan Dasar-dasar CSS</h1>
+        <nav class="breadcrumb">
+            <a href="index.html">Beranda</a> > Pertemuan 3
+        </nav>
+    </header>
+    <a href="index.html" class="btn-back">← Kembali ke Beranda</a>
+
+    <main class="container">
+        <div class="card">
+            <div class="card-preview">
+                <h3>Tujuan Pembelajaran</h3>
+                <p>Mahasiswa diharapkan memahami fungsi CSS dalam styling halaman web, menguasai selector dan properti dasar, serta mampu menerapkan CSS dalam tiga jenis (inline, internal, external) untuk membuat tampilan yang menarik dan konsisten.</p>
+
+                <h3>Pengenalan CSS: Apa dan Mengapa Diperlukan?</h3>
+                <p>CSS (Cascading Style Sheets) adalah bahasa untuk mengatur tampilan halaman web. Bayangkan HTML sebagai kerangka rumah, maka CSS adalah cat dan dekorasinya. Tanpa CSS, web akan tampil polos dan tidak menarik. CSS memisahkan struktur (HTML) dari presentasi, membuat kode lebih rapi dan mudah diubah. Dikembangkan oleh W3C, CSS memungkinkan kontrol warna, font, layout, dan animasi.</p>
+                <p>CSS penting untuk user experience: membuat web responsif, aksesibel, dan profesional. Misalnya, mengubah warna tombol atau menyelaraskan teks.</p>
+
+                <h3>Selector, Properti, dan Jenis CSS</h3>
+                <p>Selector adalah "target" elemen HTML yang ingin di-styling, seperti tag (h1), class (.myclass), atau ID (#myid). Properti adalah atribut styling, seperti color atau font-size. Jenis CSS: Inline (di tag HTML), Internal (di &lt;style&gt; head), External (file .css terpisah – paling direkomendasikan untuk maintainability).</p>
+                <ul>
+                    <li><b>Selector Dasar</b>: Tag (h1 { color: red; }), Class (.btn { background: blue; }), ID (#header { text-align: center; }). Gunakan class untuk reusable styling.</li>
+                    <li><b>Properti Umum</b>: color (warna teks), font-size (ukuran font), margin/padding (spasi), background (latar belakang).</li>
+                    <li><b>Jenis CSS</b>: Inline cepat tapi berantakan; Internal untuk halaman tunggal; External untuk proyek besar.</li>
+                </ul>
+                <p>Langkah penerapan: 1) Pilih selector, 2) Tambah properti dalam {}, 3) Link file CSS di HTML.</p>
+
+                <h3>Contoh Kode CSS Lengkap</h3>
+                <pre>
+/* External CSS (style.css) */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.btn {
+    background: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Inline: &lt;h1 style="color: red;"&gt; */
+/* Internal: &lt;style&gt; h1 { color: blue; } &lt;/style&gt; */
+                </pre>
+
+                <h3>Tips Praktis</h3>
+                <ul>
+                    <li>Gunakan external CSS untuk proyek besar, hindari inline agar kode bersih.</li>
+                    <li>Test di browser dev tools untuk melihat perubahan real-time.</li>
+                    <li>Belajar specificity: ID > Class > Tag, untuk menghindari konflik styling.</li>
+                </ul>
+
+                <h3>Ringkasan</h3>
+                <p>CSS mengubah HTML menjadi web yang cantik dan fungsional. Dengan selector dan properti, Anda bisa kontrol tampilan penuh. External CSS adalah best practice untuk kolaborasi.</p>
+
+                <h3>Latihan</h3>
+                <p>1. Buat file CSS eksternal, styling halaman HTML dengan warna, font, dan button. 2. Coba inline dan internal, bandingkan kelebihannya. 3. Diskusikan: Mengapa CSS penting untuk web modern?</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 – UAS Pemrograman Web | Dibuat oleh Mahasiswa IT Semester 5</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 14 – Optimasi Performa Web</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Pertemuan 14 – Optimasi Performa Web</h1>
+        <nav class="breadcrumb">
+            <a href="index.html">Beranda</a> > Pertemuan 14
+        </nav>
+    </header>
+    <a href="index.html" class="btn-back">← Kembali ke Beranda</a>
+
+    <main class="container">
+        <div class="card">
+            <div class="card-preview">
+                <h3>Tujuan Pembelajaran</h3>
+                <p>Mahasiswa diharapkan mampu mengoptimalkan performa website menggunakan teknik caching dan performance tuning untuk meningkatkan kecepatan loading, user experience, dan efisiensi resource.</p>
+
+                <h3>Caching dan Performance Tuning</h3>
+                <p>Caching simpan resource (CSS, JS, gambar) di browser/cache server agar load cepat saat revisit. Performance tuning optimasi kode/resource untuk kurangi load time. Teknik: Browser cache, service worker (PWA), minify file, compress gambar, lazy loading.</p>
+                <p>Analoginya: Caching seperti simpan bahan di dapur, tuning seperti efisiensi resep.</p>
+
+                <h3>Teknik Utama Optimasi</h3>
+                <ul>
+                    <li><b>Caching</b>: Gunakan HTTP headers (Cache-Control) atau service worker untuk offline access.</li>
+                    <li><b>Minify</b>: Kompres CSS/JS hapus spasi/comment, gunakan tools online.</li>
+                    <li><b>Compress Gambar</b>: Kurangi ukuran file tanpa loss quality.</li>
+                    <li><b>Lazy Loading</b>: Load gambar saat scroll, tambah loading="lazy".</li>
+                </ul>
+                <p>Tools: Google PageSpeed Insights audit performa, GTmetrix measure speed.</p>
+
+                <h3>Contoh Kode</h3>
+                <pre>
+// Service Worker untuk Caching (sw.js)
+self.addEventListener('install', event => {
+    event.waitUntil(
+        caches.open('v1').then(cache => {
+            return cache.addAll(['/', '/index.html', '/style.css']);
+        })
+    );
+});
+
+self.addEventListener('fetch', event => {
+    event.respondWith(
+        caches.match(event.request).then(response => {
+            return response || fetch(event.request);
+        })
+    );
+});
+
+// Register: navigator.serviceWorker.register('sw.js');
+
+// Lazy Loading
+&lt;img src="image.jpg" alt="Lazy" loading="lazy"&gt;
+
+// Minify CSS (hasil tool)
+body{margin:0;font-family:Arial,sans-serif}
+                </pre>
+                <p>Penjelasan: Service worker cache resource. Lazy loading tunda load gambar. Minify kurangi ukuran file.</p>
+
+                <h3>Tips Praktis</h3>
+                <ul>
+                    <li>Gunakan CDN untuk library (jQuery via CDN) kurangi load server.</li>
+                    <li>Audit dengan Lighthouse: Buka dev tools > Lighthouse > Generate report.</li>
+                    <li>Untuk gambar, gunakan format WebP untuk compress lebih baik.</li>
+                    <li>Test performa di mobile, karena bandwidth terbatas.</li>
+                </ul>
+
+                <h3>Ringkasan Materi</h3>
+                <p>Optimasi performa buat web cepat dan efisien. Caching dan tuning tingkatkan UX, kurangi bounce rate.</p>
+
+                <h3>Latihan dan Diskusi</h3>
+                <p>1. Audit website dengan PageSpeed Insights, implementasi 3 rekomendasi. 2. Tambah lazy loading ke gambar. 3. Minify CSS/JS file. 4. Diskusikan: Mengapa performa penting untuk e-commerce? Jika lambat, cek Network tab dev tools.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 – UAS Pemrograman Web | Dibuat oleh Mahasiswa IT Semester 5</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

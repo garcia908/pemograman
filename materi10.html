@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 10 – Optimasi dan Debugging Website</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Pertemuan 10 – Optimasi dan Debugging Website</h1>
+        <nav class="breadcrumb">
+            <a href="index.html">Beranda</a> > Pertemuan 10
+        </nav>
+    </header>
+    <a href="index.html" class="btn-back">← Kembali ke Beranda</a>
+
+    <main class="container">
+        <div class="card">
+            <div class="card-preview">
+                <h3>Tujuan Pembelajaran</h3>
+                <p>Mahasiswa diharapkan mampu mengoptimalkan website menggunakan teknik SEO dasar untuk meningkatkan visibilitas, serta melakukan debugging dan inspeksi kode menggunakan developer tools browser untuk mengidentifikasi dan memperbaiki error.</p>
+
+                <h3>Optimasi Website dengan Teknik SEO Dasar</h3>
+                <p>SEO (Search Engine Optimization) adalah teknik untuk membuat website mudah ditemukan mesin pencari seperti Google. Teknik dasar: gunakan meta tags (description, keywords), struktur heading (h1-h6) hierarkis, alt text di gambar, dan URL deskriptif. SEO meningkatkan traffic organik tanpa bayar iklan.</p>
+                <p>Analoginya: SEO seperti etalase toko yang menarik perhatian pelanggan. Tanpa SEO, website seperti toko tersembunyi.</p>
+
+                <h3>Debugging dan Inspeksi Kode dengan Developer Tools</h3>
+                <p>Developer tools (dev tools) di browser (Chrome/Firefox) adalah toolkit untuk debug web. Console tab untuk log error/JS, Elements tab inspect HTML/CSS, Network tab cek request, Performance tab audit speed. Gunakan untuk fix bug seperti JS error atau layout rusak.</p>
+                <p>Langkah debug: 1. Buka dev tools (F12). 2. Reproduce error. 3. Cek console untuk pesan error. 4. Inspect elemen untuk styling issue.</p>
+
+                <h3>Contoh Kode dan Implementasi</h3>
+                <pre>
+&lt;!-- SEO Meta Tags di head --&gt;
+&lt;meta name="description" content="Website pembelajaran Pemrograman Web I untuk mahasiswa IT Semester 5"&gt;
+&lt;meta name="keywords" content="HTML, CSS, JavaScript, web development"&gt;
+&lt;title&gt;Pemrograman Web I - Materi Lengkap&lt;/title&gt;
+
+&lt;!-- Struktur Heading untuk SEO --&gt;
+&lt;h1&gt;Judul Utama Halaman&lt;/h1&gt;
+&lt;h2&gt;Sub Judul&lt;/h2&gt;
+&lt;p&gt;Konten paragraf.&lt;/p&gt;
+
+&lt;!-- Alt Text di Gambar --&gt;
+&lt;img src="diagram.jpg" alt="Diagram struktur web untuk SEO"&gt;
+
+&lt;!-- Debug JS di Console --&gt;
+console.log("Debug message"); // Muncul di dev tools console
+// Jika error, cek stack trace untuk lokasi bug
+                </pre>
+                <p>Penjelasan: Meta tags bantu Google index halaman. Heading buat struktur readable. Alt text untuk gambar tidak load. Console log untuk track variabel/error.</p>
+
+                <h3>Tips Praktis</h3>
+                <ul>
+                    <li>Untuk SEO, gunakan tools gratis seperti Google Search Console untuk monitor ranking.</li>
+                    <li>Debug JS: Tambah breakpoint di dev tools Sources tab untuk pause eksekusi.</li>
+                    <li>Optimasi performa: Minify CSS/JS dengan tools online, compress gambar.</li>
+                    <li>Jika website lambat, cek Network tab untuk resource besar, gunakan lazy loading.</li>
+                </ul>
+
+                <h3>Ringkasan Materi</h3>
+                <p>SEO buat website ditemukan user, debugging buat kode bebas error. Kombinasi ini buat web profesional dan efisien.</p>
+
+                <h3>Latihan dan Diskusi</h3>
+                <p>1. Tambah meta description dan keywords ke halaman HTML, test di Google search simulator. 2. Buat halaman dengan JS error (misal: variabel undefined), debug di console. 3. Inspect elemen card di dev tools, ubah CSS real-time. 4. Diskusikan: Mengapa SEO penting untuk bisnis online? Jika stuck, screenshot dev tools dan tanyakan.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 – UAS Pemrograman Web | Dibuat oleh Mahasiswa IT Semester 5</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

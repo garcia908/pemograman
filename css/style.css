@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #333;
+    line-height: 1.6;
+}
+
+.header {
+    background: #013d71;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.header h1 {
+    margin-bottom: 10px;
+    font-size: 2.5em;
+}
+
+.navbar {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.navbar .bubble {
+    display: inline-block;
+    padding: 12px 18px;
+    background: linear-gradient(45deg, #0e5898, #0056b3); /* Gradient biar keren */
+    color: white;
+    text-decoration: none;
+    border-radius: 50px; /* Bubble bulat */
+    border: 2px solid #fff; /* Border putih biar standout */
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.navbar .bubble:hover {
+    background: linear-gradient(45deg, #0056b3, #003d7a);
+    transform: scale(1.15) translateY(-2px); /* Scale dan lift biar clickable */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    border-color: #ccc;
+}
+
+.navbar .bubble:active {
+    transform: scale(1.05); /* Effect klik */
+}
+
+.breadcrumb {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+.breadcrumb a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background: white;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.card-header {
+    background: #fafdff;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: bold;
+    flex-wrap: wrap;
+}
+
+.btn, .btn-toggle {
+    background: #0e5898;
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn:hover, .btn-toggle:hover {
+    background: #0a4a7a;
+}
+
+.btn-toggle {
+    margin-right: 10px;
+}
+
+.card-preview {
+    padding: 25px;
+    background: #f9f9f9;
+}
+
+.btn-back {
+    display: inline-block;
+    margin: 20px;
+    color: #013d71;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer {
+    background: #0e6fc4;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+/* Responsivitas */
+@media (max-width: 768px) {
+    .header h1 {
+        font-size: 2em;
+    }
+    .navbar {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .navbar .bubble {
+        padding: 10px 15px;
+        font-size: 12px;
+    }
+    .card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    .container {
+        padding: 0 10px;
+    }
+}

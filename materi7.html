@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 7 – Struktur Kontrol JavaScript</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Pertemuan 7 – Struktur Kontrol JavaScript</h1>
+        <nav class="breadcrumb">
+            <a href="index.html">Beranda</a> > Pertemuan 7
+        </nav>
+    </header>
+    <a href="index.html" class="btn-back">← Kembali ke Beranda</a>
+
+    <main class="container">
+        <div class="card">
+            <div class="card-preview">
+                <h3>Tujuan Pembelajaran</h3>
+                <p>Mahasiswa diharapkan mampu menggunakan struktur kontrol JavaScript seperti array, looping, dan kondisi untuk mengelola alur program yang logis, efisien, dan dapat menangani data dinamis dalam aplikasi web.</p>
+
+                <h3>Array di JavaScript</h3>
+                <p>Array adalah struktur data yang menyimpan koleksi nilai dalam satu variabel. Bayangkan array seperti rak buku: setiap slot menyimpan item. Di JS, array dinamis, bisa tambah/hapus elemen. Contoh: let buah = ["apel", "jeruk", "mangga"];. Akses dengan index (buah[0] = "apel"), manipulasi dengan method seperti push() (tambah akhir), pop() (hapus akhir), atau splice() (hapus/insert di posisi tertentu).</p>
+                <p>Penggunaan array penting untuk data list seperti daftar produk atau nilai mahasiswa. Tanpa array, kita harus bikin variabel terpisah untuk setiap item, yang tidak efisien.</p>
+
+                <h3>Looping (Perulangan)</h3>
+                <p>Looping digunakan untuk menjalankan kode berulang kali. Ada tiga jenis utama: for (untuk iterasi dengan counter), while (selama kondisi true), dan forEach (khusus array, lebih sederhana). Contoh: for (let i = 0; i < 5; i++) { console.log(i); }. Looping hemat kode, misalnya cetak semua elemen array tanpa tulis manual.</p>
+                <p>Tips: Gunakan for untuk kontrol penuh, forEach untuk array sederhana. Hindari infinite loop (while tanpa kondisi berhenti) yang bikin browser crash.</p>
+
+                <h3>Kondisi (Percabangan)</h3>
+                <p>Kondisi memungkinkan program memilih aksi berdasarkan kondisi. Gunakan if-else untuk sederhana, switch untuk multiple pilihan. Contoh: if (nilai > 80) { console.log("Lulus"); } else { console.log("Remedial"); }. Kondisi buat logika seperti validasi form atau game sederhana.</p>
+                <p>Operator: == (sama nilai), === (sama nilai dan tipe), && (dan), || (atau), ! (not).</p>
+
+                <h3>Contoh Kode Lengkap</h3>
+                <pre>
+// Array dan manipulasi
+let angka = [10, 20, 30, 40];
+angka.push(50); // Tambah 50
+console.log(angka); // [10, 20, 30, 40, 50]
+
+// Looping for
+for (let i = 0; i < angka.length; i++) {
+    console.log("Angka ke-" + i + ": " + angka[i]);
+}
+
+// Kondisi if-else
+let total = angka.reduce((a, b) => a + b, 0); // Sum array
+if (total > 100) {
+    console.log("Total besar: " + total);
+} else {
+    console.log("Total kecil: " + total);
+}
+
+// Looping forEach
+angka.forEach(function(item, index) {
+    console.log("Index " + index + ": " + item);
+});
+                </pre>
+                <p>Penjelasan: Kode ini buat array angka, loop cetak, kondisi cek total, dan forEach untuk iterasi simpel. Jalankan di console browser untuk lihat output.</p>
+
+                <h3>Tips Praktis untuk Pemula</h3>
+                <ul>
+                    <li>Gunakan console.log() di dalam loop/kondisi untuk debug dan lihat nilai variabel.</li>
+                    <li>Array method seperti map() (ubah elemen) atau filter() (saring) bisa digabung dengan loop untuk data kompleks.</li>
+                    <li>Praktikkan di editor online seperti JSFiddle untuk test cepat tanpa setup file.</li>
+                    <li>Jika stuck, ingat: Loop untuk "ulang", kondisi untuk "pilih", array untuk "simpan banyak".</li>
+                </ul>
+
+                <h3>Ringkasan Materi</h3>
+                <p>Struktur kontrol adalah inti pemrograman JS. Array simpan data kolektif, looping proses berulang, kondisi ambil keputusan. Kombinasi ini buat aplikasi web yang dinamis, seperti kalkulator atau to-do list.</p>
+
+                <h3>Latihan dan Diskusi</h3>
+                <p>1. Buat array nama mahasiswa, loop cetak "Halo [nama]". 2. Tambah kondisi if nilai > 70 cetak "Lulus", else "Tidak". 3. Gunakan forEach hitung total array angka. 4. Diskusikan: Apa beda for dan while?.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 – UAS Pemrograman Web | Dibuat oleh Mahasiswa IT Semester 5</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

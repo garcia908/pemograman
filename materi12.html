@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 12 – PWA dan Library JS Modern</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Pertemuan 12 – PWA dan Library JS Modern</h1>
+        <nav class="breadcrumb">
+            <a href="index.html">Beranda</a> > Pertemuan 12
+        </nav>
+    </header>
+    <a href="index.html" class="btn-back">← Kembali ke Beranda</a>
+
+    <main class="container">
+        <div class="card">
+            <div class="card-preview">
+                <h3>Tujuan Pembelajaran</h3>
+                <p>Mahasiswa diharapkan mampu mengimplementasikan Progressive Web App (PWA) untuk aplikasi web offline-capable, serta menggunakan library JavaScript modern seperti jQuery dan React untuk pengembangan UI yang efisien.</p>
+
+                <h3>Progressive Web App (PWA)</h3>
+                <p>PWA adalah web app yang berperilaku seperti native app: installable, offline support, push notification. Komponen utama: Service Worker (cache resource), Web App Manifest (ikon, nama), HTTPS. PWA buat web lebih engaging, seperti Twitter Lite.</p>
+                <p>Keuntungan: Load cepat, work offline, discoverable via search. Implementasi: Register service worker, buat manifest.json.</p>
+
+                <h3>Library JS Modern: jQuery dan React</h3>
+                <ul>
+                    <li><b>jQuery</b>: Library simplifikasi DOM manipulation, AJAX, event handling. Contoh: $('button').click(function() { ... }). Mudah untuk beginner, tapi kurang modern.</li>
+                    <li><b>React</b>: Library untuk UI komponen-based. Buat komponen reusable, state management. Contoh: function App() { return &lt;div&gt;Hello&lt;/div&gt;; }. Lebih powerful untuk app kompleks.</li>
+                </ul>
+                <p>Pilih jQuery untuk quick fix, React untuk scalable app.</p>
+
+                <h3>Contoh Kode</h3>
+                <pre>
+// PWA: Service Worker (sw.js)
+self.addEventListener('install', event => {
+    event.waitUntil(
+        caches.open('v1').then(cache => {
+            return cache.addAll(['/', '/index.html', '/style.css']);
+        })
+    );
+});
+
+self.addEventListener('fetch', event => {
+    event.respondWith(
+        caches.match(event.request).then(response => {
+            return response || fetch(event.request);
+        })
+    );
+});
+
+// Register di main JS: navigator.serviceWorker.register('sw.js');
+
+// jQuery
+$(document).ready(function() {
+    $('#btn').click(function() {
+        $('#content').html('Hello jQuery!');
+    });
+});
+
+// React (dasar, butuh setup)
+import React from 'react';
+function Greeting() {
+    return &lt;h1&gt;Hello React&lt;/h1&gt;;
+}
+                </pre>
+                <p>Penjelasan: Service worker cache resource untuk offline. jQuery manipulasi DOM simpel. React buat komponen. Untuk React, install via npm.</p>
+
+                <h3>Tips Praktis</h3>
+                <ul>
+                    <li>PWA test di Lighthouse (dev tools) untuk score.</li>
+                    <li>jQuery include via CDN: &lt;script src="https://code.jquery.com/jquery-3.6.0.min.js"&gt;&lt;/script&gt;.</li>
+                    <li>React butuh build tool seperti Create React App untuk setup mudah.</li>
+                    <li>Untuk PWA, pastikan manifest.json: {"name": "App", "start_url": "/", "display": "standalone"}.</li>
+                </ul>
+
+                <h3>Ringkasan Materi</h3>
+                <p>PWA buat web seperti app, library JS percepat development. Ini tingkatkan UX dan produktivitas.</p>
+
+                <h3>Latihan dan Diskusi</h3>
+                <p>1. Buat PWA sederhana: tambah service worker dan manifest, test offline. 2. Implementasi jQuery untuk toggle div. 3. Setup React app kecil, buat komponen button. 4. Diskusikan: Kapan pakai PWA vs native app? Jika stuck, cek dokumentasi resmi.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 – UAS Pemrograman Web | Dibuat oleh Mahasiswa IT Semester 5</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

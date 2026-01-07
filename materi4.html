@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pertemuan 4 – Box Model dan Layout dengan CSS</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <h1>Pertemuan 4 – Box Model dan Layout dengan CSS</h1>
+        <nav class="breadcrumb">
+            <a href="index.html">Beranda</a> > Pertemuan 4
+        </nav>
+    </header>
+    <a href="index.html" class="btn-back">← Kembali ke Beranda</a>
+
+    <main class="container">
+        <div class="card">
+            <div class="card-preview">
+                <h3>Tujuan Pembelajaran</h3>
+                <p>Mahasiswa mampu memahami konsep box model CSS, menerapkan margin, padding, border untuk kontrol spasi, dan menggunakan CSS Grid untuk layout halaman yang terstruktur dan responsif.</p>
+
+                <h3>Box Model CSS: Konsep Dasar</h3>
+                <p>Setiap elemen HTML adalah "box" dengan lapisan: content (isi), padding (ruang dalam), border (garis), margin (ruang luar). Bayangkan box sebagai kotak surat: content adalah surat, padding adalah bantalan dalam, border adalah amplop, margin adalah jarak ke kotak lain. Box model penting untuk layout akurat, menghindari elemen bertumpuk.</p>
+                <p>Properti: margin (luar), padding (dalam), border (garis tebal/warna/style). Gunakan box-sizing: border-box; agar width termasuk padding/border.</p>
+
+                <h3>Penerapan Box Model</h3>
+                <ul>
+                    <li><b>Margin</b>: Jarak luar, contoh margin: 10px; (semua sisi) atau margin-top: 20px;.</li>
+                    <li><b>Padding</b>: Ruang dalam, padding: 15px; untuk spasi teks dari border.</li>
+                    <li><b>Border</b>: Garis, border: 1px solid black; untuk outline.</li>
+                </ul>
+                <p>Langkah: 1) Reset box-sizing, 2) Atur margin/padding per elemen, 3) Tambah border untuk visual.</p>
+
+                <h3>CSS Grid untuk Layout</h3>
+                <p>CSS Grid adalah sistem layout 2D untuk grid-based design. Lebih powerful dari Flexbox untuk layout kompleks. Definisikan grid di parent, lalu posisi child dengan grid-column/grid-row. Cocok untuk halaman responsif.</p>
+                <p>Properti: display: grid;, grid-template-columns: 1fr 2fr; (kolom), grid-gap: 10px; (jarak).</p>
+
+                <h3>Contoh Kode</h3>
+                <pre>
+/* Box Model */
+.box {
+    width: 200px;
+    padding: 20px;
+    border: 2px solid #333;
+    margin: 10px;
+    box-sizing: border-box; /* Include padding/border in width */
+}
+
+/* CSS Grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* 3 kolom sama */
+    grid-gap: 15px;
+}
+
+.grid-item {
+    background: lightblue;
+    padding: 10px;
+}
+                </pre>
+
+                <h3>Tips Praktis</h3>
+                <ul>
+                    <li>Gunakan dev tools untuk inspect box model elemen.</li>
+                    <li>Grid untuk layout utama, Flexbox untuk komponen kecil.</li>
+                    <li>Hindari margin collapse dengan padding.</li>
+                </ul>
+
+                <h3>Ringkasan</h3>
+                <p>Box model kontrol spasi elemen, Grid buat layout terstruktur. Kombinasi ini buat web rapi dan responsif.</p>
+
+                <h3>Latihan</h3>
+                <p>1. Buat halaman dengan box model: div dengan padding, border, margin. 2. Implementasi grid 3x3 untuk galeri gambar. 3. Test responsivitas di mobile.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 – UAS Pemrograman Web | Dibuat oleh Mahasiswa IT Semester 5</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
